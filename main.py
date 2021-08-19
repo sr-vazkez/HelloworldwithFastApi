@@ -1,8 +1,8 @@
 # Importando lo necesario
-from fastapi import FastApi
+from fastapi import FastAPI
 from typing import Optional
 # Hey mira se parece a flask
-app = FastApi()
+app = FastAPI()
 # Creando rutas
 
 
