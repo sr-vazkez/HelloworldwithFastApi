@@ -26,9 +26,7 @@ patch = modificaciones parciales
 trace = observar que le pasa a la peticion
 """
 #path parameter obligatorios
+#Query paramether ? son opcionales 
 @app.get("/tweets/{tweet_id}")
 def tweets(tweet_id: int):
     return {"tweet_id": tweet_id}
-
-#Query paramether optional ? son opcionales 
-
