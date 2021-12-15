@@ -7,3 +7,4 @@ app = FastAPI()
 @app.get("/")
 def home():
     return {"Hello": "World"}
+#ejecutar usando uvicorn main:app --reload
