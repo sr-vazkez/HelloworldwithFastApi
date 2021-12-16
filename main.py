@@ -16,7 +16,9 @@ app = FastAPI()
 
 #Models
 class Persona(BaseModel):
-    """ Models"""
+    """ Models
+    Con validaciones
+    """
     nombre: str
     apellido: str
     edad: int
