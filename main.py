@@ -1,8 +1,10 @@
 #importar cosas de Python
 from typing import Optional
+from enum import Enum
 
 #importando pydantic
 from pydantic import BaseModel
+from pydantic import Field
 """ Models
 Que es un modelo?
 representa un objecto en codigo del mundo real
@@ -11,12 +13,17 @@ pydantic es una libreria que nos permite crear modelos
 #Importando la clase FastAPI
 from fastapi import FastAPI
 from fastapi import Body
-from fastapi import Query
-from fastapi import Path
+from fastapi import Query, Path
 #Instanciando la clase FastAPI
 app = FastAPI()
 
 #Models
+class ColorCabello(Enum):
+    white = "white"
+    brown = "brown"
+    black = "black"
+    blonde = "blonde"
+    red = "red"
 class Location(BaseModel):
     city: str
     state: str
@@ -25,11 +32,24 @@ class Persona(BaseModel):
     """ Models
     Con validaciones
     """
-    nombre: str
-    apellido: str
-    edad: int
-    color_cabello: Optional[str] = None 
-    esta_casado: Optional[bool] = None     
+    nombre: str = Field(
+        ...,
+        min_length = 1,
+        max_length = 50
+        )
+    apellido: str = Field(
+        ...,
+        min_length = 1,
+        max_length = 50
+        
+        )
+    edad: int = Field(
+        ...,
+        gt = 1,
+        le = 115
+        )
+    color_cabello: Optional[ColorCabello] = Field(default = None)
+    esta_casado: Optional[bool] = Field(default=None) 
 
 
 
