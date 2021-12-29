@@ -46,3 +46,15 @@ def mostrar_persona(
     #deberia ser opcional, pero es para conocerlo de como debe ser obligatorio
 ):
     return {nombre: edad}
+
+"""Fast api tiene algo curioso 
+en lugar de usar los famosos simnbolos, a su creador le parecio una buena idea usar palabras
+>= ge = greater or equal than 
+<= le = less or equal than
+>  gt = greater than
+< lt = less than
+
+Los siguientes paramaetros son para mejorar la doc
+title  
+description 
+"""
