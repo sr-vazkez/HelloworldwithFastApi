@@ -11,6 +11,7 @@ pydantic es una libreria que nos permite crear modelos
 #Importando la clase FastAPI
 from fastapi import FastAPI
 from fastapi import Body
+from fastapi import Query
 #Instanciando la clase FastAPI
 app = FastAPI()
 
@@ -35,3 +36,13 @@ def home():
 @app.post("/persona/nueva")
 def crear_persona(persona: Persona = Body(...)):
     return persona
+
+#Validaciones Query Parameters
+
+@app.get("/persona/detalle")
+def mostrar_persona(
+    nombre: Optional[str] = Query(None,  min_length=1, max_length = 50),
+    edad: Optional[str] = Query(...)
+    #deberia ser opcional, pero es para conocerlo de como debe ser obligatorio
+):
+    return {nombre: edad}
