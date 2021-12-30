@@ -119,3 +119,12 @@ def update_person(
     results = persona.dict()
     results.update(location.dict())
     return results
+
+#Reto
+""" 
+    1 Validar todo el modelo de location usando la clase field
+    de pydantic 
+    2 elejir 3 tipos de datos exoticos para el modelo de persona crear atributos
+    y validar para cada uno de ellos
+    https://pydantic-docs.helpmanual.io/usage/types/#pydantic-types
+"""
